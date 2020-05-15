@@ -1,0 +1,5 @@
+name: 'Basic Action'
+description: 'Puts a file in the workspace and uploads it as an artifact'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

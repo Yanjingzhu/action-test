@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/my-action
+      - run: ls -la $GITHUB_WORKSPACE
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifacts
+          path: $GITHUB_WORKSPACE
+
