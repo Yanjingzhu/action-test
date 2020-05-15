@@ -11,8 +11,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/my-action
       - run: ls -la $GITHUB_WORKSPACE
+      - run: ls -la $HOME
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifacts
+          name: workspace-artifacts
           path: $GITHUB_WORKSPACE
+      - uses: actions/upload-artifact@v2
+        with:
+          name: home-artifacts
+          path: $HOME
 
